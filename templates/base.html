@@ -2,15 +2,12 @@
 <html>
     <head>
         <title>{{title}}</title>
-        <style>
-            .error {
-                color: red;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
 <body>
     <div>
-       <a href='/logout'>log out<</a>
+        <a href='/addposts'>Main Blog Page</a>
+        <a href='/addposts'>Add Blog Entry</a>
     </div>
 
     {% with messages = get_flashed_messages(with_categories=True) %}

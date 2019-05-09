@@ -18,7 +18,7 @@ class Blog(db.Model):
         self.post = post
         self.publish = publish
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/', methods=['GET'])
 def index():   
     posts = Blog.query.filter_by(publish=True).all()
     return render_template('mainblog.html',title="My Blog", 

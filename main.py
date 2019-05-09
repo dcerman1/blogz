@@ -20,20 +20,25 @@ class Blog(db.Model):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    posts = Blog.query.filter_by(publish=True).all()
+    return render_template('mainblog.html',title="My Blog", 
+        posts=posts)
+
+@app.route('/addpost', methods=['POST', 'GET'])
+def add_post():
     if request.method == 'POST':
         new_title = request.form['title']
         new_post = request.form['post']
         blog = Blog.query.get(new_title)
         new_blog = Blog(new_title, new_post, True)
         
-   
         db.session.add(new_blog)
         db.session.commit()
+        return redirect ('/')
+
+    return render_template('addpost.html')
     
-    posts = Blog.query.filter_by(publish=True).all()
-    return render_template('mainblog.html',title="My Blog", 
-        posts=posts)
-    
+
 if __name__ == '__main__':
     app.run()
 

@@ -16,7 +16,9 @@ gitignore/Python.gitignore
 7079791 on Mar 11
 @arcresu @shiftkey @Lucretiel @Harrison-G @jwg4 @GabrielC101 @Metallicow @misaelnieto @pmsosa @svkampen @vltr @matheussl @hugovk @ghisvail @EvandroLG @DSIW @amigcamel @toanant @2Cubed @brettcannon @weinihou @Visgean @nvie @skuschel @sigo @sethmlarson
 124 lines (100 sloc)  1.66 KB
-    
+
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

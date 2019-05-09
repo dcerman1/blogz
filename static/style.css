@@ -33,8 +33,20 @@ li.nav a:hover {
 h1 {
   font-family: 'Work Sans', sans-serif;
   font-weight: 700;
-  font-style: normal;
   letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+h2 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 24px;
+}
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
 }
 .error {
     color: red;
@@ -86,4 +98,5 @@ input[type=submit]:hover {
   color: white;
   letter-spacing: 1.2px;
 }
+
   

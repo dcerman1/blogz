@@ -2,9 +2,9 @@
 
 {% block content %}
     <h1>Contribute A New Post</h1>   
-    <form method='POST'>
-        <label>TITLE:<input type='text' name='title' /></label>
-        <label>POST:<textarea name='post'></textarea></label>
+    <form action='/addpost' method='POST'>
+        <label>TITLE:<input type='text' name='title' required /></label>
+        <label>POST:<textarea name='post' required ></textarea></label>
         <input type='submit' name='publish' value='PUBLISH' />
     </form>
 

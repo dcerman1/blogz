@@ -13,24 +13,25 @@ class Blog(db.Model):
     post = db.Column(db.String(15000))
     publish = db.Column(db.Boolean)
 
-    def __init__(self, title, post):
+    def __init__(self, title, post, publish):
         self.title = title
         self.post = post
-        self.publish = False
+        self.publish = publish
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
         new_title = request.form['title']
         new_post = request.form['post']
-        publish = True
-        new_blog = Blog(new_title, new_post)
+        blog = Blog.query.get(new_title)
+        new_blog = Blog(new_title, new_post, True)
+        
    
         db.session.add(new_blog)
         db.session.commit()
     
-    posts = Blog.query.filter_by(publish=False).all()
-    return render_template('mainblog.html',title="MY BLOG", 
+    posts = Blog.query.filter_by(publish=True).all()
+    return render_template('mainblog.html',title="My Blog", 
         posts=posts)
     
 if __name__ == '__main__':

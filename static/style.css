@@ -35,11 +35,12 @@ h1 {
   font-weight: 700;
   letter-spacing: 1.2px;
   text-transform: uppercase;
+  font-size: 30px;
 }
 h2 {
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: .9px;
   font-size: 24px;
 }
 p {
@@ -47,6 +48,11 @@ p {
   font-size: 18px;
   font-weight: 300;
   font-style: normal;
+}
+a{
+  color: rgb(113, 112, 112);
+  text-decoration: none;
+
 }
 .error {
     color: red;

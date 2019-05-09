@@ -11,7 +11,7 @@
     <hr />
         <ul>
             {% for post in posts %}
-            <h2>{{post.title}}</h2>
+            <h2><a href='/post?id={{post.id}}'>{{post.title}}</a></h2>
             <p>{{post.post}}</p>
             <br>
             {% endfor %}

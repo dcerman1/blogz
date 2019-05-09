@@ -19,10 +19,18 @@ class Blog(db.Model):
         self.publish = publish
 
 @app.route('/', methods=['POST', 'GET'])
-def index():
+def index():   
     posts = Blog.query.filter_by(publish=True).all()
     return render_template('mainblog.html',title="My Blog", 
         posts=posts)
+
+
+@app.route('/post', methods=['GET'])
+def view_post():
+    if request.method == 'GET':
+        id = request.args.get('id')
+        blog = Blog.query.filter_by(id=id).first()
+        return render_template('post.html', id=id, blog=blog)
 
 @app.route('/addpost', methods=['POST', 'GET'])
 def add_post():
@@ -34,14 +42,12 @@ def add_post():
         
         db.session.add(new_blog)
         db.session.commit()
-        return redirect ('/')
-
+        blog = Blog.query.filter_by(title=new_title).first()
+        return redirect ('/post?id='+str(blog.id))
+ 
     return render_template('addpost.html')
     
 
 if __name__ == '__main__':
     app.run()
 
-"""       blog_id = int(request.form['blog-id'])
-        blog = Task.query.get(blog_id)
-        blog.publish = True"""

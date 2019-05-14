@@ -49,13 +49,23 @@ p {
   font-weight: 300;
   font-style: normal;
 }
+ul.error {
+  list-style-type: none;
+  margin: 0px 0px 13px 0px;
+  padding: 0;
+  overflow: hidden;
+}
+li.error {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: red;
+  list-style-type: none;
+  text-align: left;
+  font-style: italic;
+}
 a{
   color: rgb(113, 112, 112);
   text-decoration: none;
-
-}
-.error {
-    color: red;
 }
 label {
     padding: 12px 12px 12px 0;

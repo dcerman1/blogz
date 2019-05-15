@@ -2,19 +2,18 @@ body {
   padding: 40px;
 }
 
-ul.nav {
+ul {
   list-style-type: none;
   margin: 0px 0px 40px 0px;
   padding: 0;
   overflow: hidden;
 }
-
-li.nav {
-  float: left;
-  border-right: 3px solid rgb(255, 255, 255)
+li.user-account {
+  float: right;
+  border-right: 3px solid rgb(255, 255, 255);
+  text-transform: uppercase;
 }
-
-li.nav a {
+li {
   color: rgb(108, 108, 108);
   font-family: 'Work Sans', sans-serif;
   font-weight: 600;
@@ -24,8 +23,12 @@ li.nav a {
   padding: 0px 25px 0px 0px;
 }
 
-/* Change the link color to #111 (black) on hover */
-li.nav a:hover {
+li.nav {
+  float: left;
+  border-right: 3px solid rgb(255, 255, 255)
+}
+
+ul a:hover {
   text-decoration: underline;
   color: #000000
 }
@@ -42,6 +45,12 @@ h2 {
   font-weight: 600;
   letter-spacing: .9px;
   font-size: 24px;
+}
+h3 {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 200;
+  font-size: 14px;
 }
 p {
   font-family: 'Roboto', sans-serif;

@@ -6,13 +6,19 @@
         <div><link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600,500,900" rel="stylesheet"></div> 
     </head>
 <body>
-    <ul class=nav>
-       <li class=nav><a href='/'>HOME</a></li>
-       <li class=nav ><a href='/addpost'>NEW POST</a></li> 
+    <ul class="nav">
+        <li class="nav"><a href='/'>HOME</a></li>
+        <li class="nav" ><a href='/blog'>ALL POSTS</a></li>
+        
+        {% if 'user' in session %}
+            <li class="nav" ><a href='/addpost'>NEW POST</a></li>
+            <li class=user-account ><a href="/logout">LOG OUT</a></li>  
+            {% else %}
+                <li class="nav" ><a href='/login'>NEW POST</a></li>
+                <li class=user-account ><a href="/login">LOGIN</a></li> 
+                <li class=user-account ><a href="/signup">SIGN-UP</a></li>
+            {% endif %}
     </ul>
-
- 
-
 
     {% block content %}
     {% endblock %}

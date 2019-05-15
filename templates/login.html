@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Log in</h1>
-<p>If you don't have an account, you may <a href="/register">register</a> for one</p>
+<p>Don't have an account? <a href="/signup" >Sign-up now.</a></p>
 
 {% with messages = get_flashed_messages(with_categories=True) %}
     <ul class=error>
@@ -21,6 +21,7 @@
             <td><input name="password" type="password" required></td>
         </tr>
     </table>
+    <br>
     <input type="submit" value="LOGIN">
 </form>
 
